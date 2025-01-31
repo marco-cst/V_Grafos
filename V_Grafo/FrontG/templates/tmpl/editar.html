@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="pagetitle text-center">
+    <h1 class="text-black">Editar Datos </h1> 
+  </div>
+  
+  <section class="section">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-white">Actualizar datos </h5>
+            <form class="row g-3 needs-validation" method="POST" action="/admin/universidad/update" novalidate>
+                <input type="hidden" value="{{sintetica.idSintetica }}" name="id" />
+                <div class="mb-3">
+                  <label for="nombre" class="form-label text-black">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" required value="{{ sintetica.nombre }}">
+                </div>
+                <div class="mb-3">
+                  <label for="latitud" class="form-label text-black">Ltd</label>
+                  <input type="Double" class="form-control" name="latitud" required value="{{ sintetica.latitud }}">
+                </div>
+                <div class="mb-3">
+                  <label for="longitud" class="form-label text-black">Lng</label>
+                  <input type="text" class="form-control" name="longitud" required value="{{ sintetica.longitud}}">
+                </div>
+                <div class="mb-3">
+                  <label for="tipo" class="form-label text-black">Tipo</label>
+                  <input type="text" class="form-control" name="tipo" required>
+                </div>
+                <a href="/admin/inversionista/list" class="btn btn-custom btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-custom btn-primary">Guardar</button> <!-- Estilo de botón personalizado -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.querySelectorAll('#star-rating .star').forEach(star => {
+      star.addEventListener('click', function() {
+          let value = this.getAttribute('data-value');
+          let select = document.querySelector('#star-rating select');
+          select.value = value;
+          document.querySelectorAll('#star-rating .star').forEach(innerStar => {
+              if (innerStar.getAttribute('data-value') <= value) {
+                  innerStar.classList.add('selected');
+              } else {
+                  innerStar.classList.remove('selected');
+              }
+          });
+      });
+  });
+</script>
+
+{% endblock %}

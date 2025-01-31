@@ -1,0 +1,72 @@
+[
+    {
+        "idUniversidad": 1,
+        "nombre": "UNL",
+        "latitud": 10.7128,
+        "longitud": -74.006,
+        "tipo": "Publica"
+    },
+    {
+        "idUniversidad": 2,
+        "nombre": "UTPL",
+        "latitud": 34.0522,
+        "longitud": -118.2437,
+        "tipo": "Privada"
+    },
+    {
+        "idUniversidad": 3,
+        "nombre": "UPM",
+        "latitud": 41.8781,
+        "longitud": -87.6298,
+        "tipo": "Publica"
+    },
+    {
+        "idUniversidad": 4,
+        "nombre": "USC",
+        "latitud": 51.5074,
+        "longitud": -0.1278,
+        "tipo": "Publica"
+    },
+    {
+        "idUniversidad": 5,
+        "nombre": "ACT",
+        "latitud": 37.7749,
+        "longitud": -122.4194,
+        "tipo": "Privada"
+    },
+    {
+        "idUniversidad": 6,
+        "nombre": "IPN",
+        "latitud": 48.8566,
+        "longitud": 2.3522,
+        "tipo": "Publica"
+    },
+    {
+        "idUniversidad": 7,
+        "nombre": "UANL",
+        "latitud": 10.0,
+        "longitud": 60.0,
+        "tipo": "Publica"
+    },
+    {
+        "idUniversidad": 8,
+        "nombre": "UABC",
+        "latitud": 90.0,
+        "longitud": 20.0,
+        "tipo": "Publica"
+    },
+    {
+        "idUniversidad": 9,
+        "nombre": "UVM",
+        "latitud": 30.0,
+        "longitud": 70.0,
+        "tipo": "Privada"
+    },
+    {
+        "idUniversidad": 10,
+        "nombre": "SMA",
+        "latitud": 80.0,
+        "longitud": 90.0,
+        "tipo": "Privada"
+    }
+]

@@ -1,0 +1,99 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="pagetitle text-center">
+    <h1 class="text-black">Agregar universidad</h1>
+  </div>
+  
+  <section class="section">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-white">Ingresa los datos del sintetica</h5>
+
+            <form class="row g-3 needs-validation" method="POST" action="{{ url_for('router.save_sintetica') }}" novalidate>
+
+              <div class="mb-3">
+                <label for="nombre" class="form-label text-black">Nombre</label>
+                <input type="text" class="form-control" name="nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="nombre" class="form-label text-black">Tipo</label>
+                <input type="text" class="form-control" name="tipo" required>
+              </div>        
+              <div class="mb-3">
+                <label for="latitud" class="form-label text-black">Latitud</label>
+                <input type="number" class="form-control" name="latitud" step="0.0000001" id="latitud" required>
+              </div>
+              <div class="mb-3">
+                <label for="longitud" class="form-label text-black">Longitud</label>
+                <input type="number" class="form-control" name="longitud" step="0.0000001" id="longitud" required>
+              </div>
+              <div class="d-flex justify-content-between mt-3">
+                <button type="submit" class="btn btn-custom btn-light">Guardar</button>
+                <a href="/admin/universidad/list" class="btn btn-custom btn-secondary">Cancelar</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .pagetitle {
+    margin-bottom: 20px;
+  }
+
+  .text-black {
+    color: #000; /* Color negro para el encabezado y etiquetas */
+  }
+
+  .text-white {
+    color: #fff; /* Color blanco para otros textos */
+  }
+
+  .btn-custom {
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-custom.btn-light {
+    background-color: #f8f9fa; /* Color claro para el botón "Guardar" */
+    color: #000; /* Texto en negro */
+  }
+
+  .btn-custom.btn-secondary {
+    background-color: #6c757d; /* Color gris para el botón "Cancelar" */
+  }
+
+  .btn-custom.btn-light:hover {
+    background-color: #e2e6ea; /* Color de fondo al pasar el mouse */
+  }
+
+  .btn-custom.btn-secondary:hover {
+    background-color: #5a6268; /* Color de fondo al pasar el mouse */
+  }
+
+  .map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  #map {
+    width: 200%;
+    height: 300px; /* Tamaño pequeño del mapa */
+    max-width: 500px; /* Controla el ancho del mapa */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+</style>
+{% endblock %}

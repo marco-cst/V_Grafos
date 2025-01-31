@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Grafos</title>
+
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</head>
+
+<body class="index-page">
+    <i class="header-toggle d-xl-none bi bi-list" aria-label="Toggle Navigation Menu"></i>
+    
+    <nav id="navmenu" class="navmenu">
+        <li><a href="/admin/universidad/list"><i class="bi bi-file-earmark-text navicon"></i> Universidades</a></li>
+        <li><a href="/admin/universidad/register"><i class="bi bi-images navicon"></i>Registrar Universidad</a></li>
+        <li><a href="/grafo"><i class="bi bi-images navicon"></i> Grafo </a></li>
+    </nav>
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <main class="main">
+
+  </main>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</body>
+</html>
+</body>
+</html>

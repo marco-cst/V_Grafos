@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<!-- Quill.js CSS -->
+<link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+
+<!-- Quill.js JavaScript -->
+<script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+
+</script>
+<div class="pagetitle">
+    <h1>Universidades</h1>
+</div>
+
+<div class="col-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th> Latitud</th>
+                <th> Longitud </th>
+                 <th>Tipo</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% if list %}
+                {% for item in list %}
+                <tr id="row-{{ item.idSintetica }}">
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.latitud }}</td>
+                    <td>{{ item.longitud }}</td>
+                    <td>{{ item.tipo }}</td>
+                    <td>
+                        <a href="/admin/universidad/edit/{{ item.idUniversidad }}" class="btn btn-info">Modificar</a>
+                        <button class="btn btn-danger" onclick="deleteRow({{ item.idUniversidad }})">Eliminar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="11">No hay proyectos registrados.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function deleteRow(id) {
+        const row = document.getElementById(`row-${id}`);
+        if (confirm("¿Continuar?")) {
+            row.remove();
+        }
+    }
+</script>
+
+{% endblock %}
